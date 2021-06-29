@@ -24,14 +24,13 @@ function NavTabs() {
           News
         </Link>
       </li>
-      {/* <li className="nav-item">
-        <Link
-          to="/Teams"
-          className={location.pathname === "/Login" ? "nav-link active" : "nav-link"}
-        >
+      <li className="px-5 py-2">
+        <a class="text-base leading-6 text-gray-600 hover:text-gray-900">
+        <Link to="/Teams" className={location.pathname === "/Teams" ? "nav-link active" : "nav-link"}>
           Teams
         </Link>
-      </li> */}
+        </a>
+      </li>
       {/* <li className="nav-item">
         <Link
           to="/contact"

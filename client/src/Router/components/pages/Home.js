@@ -4,7 +4,7 @@ function Home() {
     return(
 
 <body class="font-mono bg-gray-400">
-		<div class="container mx-auto">
+		<div class="container w-screen">
 			<div class="flex justify-center px-6 my-12">
 				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
 					<div
