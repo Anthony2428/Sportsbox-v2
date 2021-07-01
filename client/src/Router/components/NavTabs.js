@@ -10,7 +10,7 @@ function NavTabs() {
   return (
     <ul className="nav nav-tabs">
       <li className="px-5 py-2">
-        <a class="text-base leading-6 text-lightBlue-500 hover:text-lightBlue-500">
+        <a className="text-base leading-6 text-lightBlue-500 hover:text-lightBlue-500">
         <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Home
         </Link>
