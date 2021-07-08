@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from "react";
-import CardContainer from "../components/CardContainer";
-import NewsContext from "../utils/newsContext";
+import CardContainer from "../CardContainer";
+import NewsContext from "../../utils/newsContext";
 
 
 function Newsfeed() {
         const [error, setError] = useState(null);
         const [isLoaded, setIsLoaded] = useState(false);
-        const [news, setNews] = useState([]);
         const [allNews, setAllNews] = useState([]);
       
         useEffect(() => {
@@ -27,7 +26,6 @@ function Newsfeed() {
                 })
                 setIsLoaded(true);
                 setAllNews(result);
-                setNews(result[0]);
               },
               (error) => {
                 setIsLoaded(true);
@@ -42,7 +40,7 @@ function Newsfeed() {
           return <div>Loading...</div>;
         } else {
           return (
-            <NewsContext.Provider value={{ news, allNews }}>
+            <NewsContext.Provider value={{ allNews }}>
               <div>
                 <h1 className="text-center">Welcome to SportsBox</h1>
                 <h3 className="text-center">Here's the latest News!</h3>

@@ -18,13 +18,22 @@
     "autoprefixer": "^10.2.6",
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.7",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
+    "postcss": "^8.3.5"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "connect-session-sequelize": "^7.1.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.16.3",
+    "express-session": "^1.17.2",
     "if-env": "^1.0.4",
+    "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "react-router-dom": "^5.2.0",
-    "tailwindcss": "^2.2.4"
+    "sequelize": "^6.6.4"
   }
 }
