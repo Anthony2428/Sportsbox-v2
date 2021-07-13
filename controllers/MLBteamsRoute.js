@@ -55,6 +55,7 @@ router.get('/team/:teamName', async (req, res) => {
       res.status(500).json(err);
     }
 });
+
 router.get('/teams/logo/:teamName', async (req, res) => {
     try {
       const MLBteamData = await MLBTeams.findOne({where: { teamName: req.params.teamName } });

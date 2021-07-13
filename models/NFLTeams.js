@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-class MLBTeams extends Model {}
 
-MLBTeams.init(
+class NFLTeams extends Model {}
+
+NFLTeams.init(
   {
     TEAMID: {
         type: DataTypes.INTEGER,
@@ -21,73 +22,29 @@ MLBTeams.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    wins: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    losses: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    homeWins: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    awayWins: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    homeLosses: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    awayLosses: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    divisionWins: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    divisionLosses: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    lastTenWins: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    lastTenLosses: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    gamesBack: {
-        type: DataTypes.DOUBLE,
-        allowNull: false,
-    },
-    wildCardGamesBack: {
-        type: DataTypes.DOUBLE,
-        allowNull: false,
-    },
-    league: {
+    conference: {
         type: DataTypes.STRING,
-        allowNull: false,
-    },
-    wildCardRank: {
-        type: DataTypes.INTEGER,
         allowNull: false,
     },
     division: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    divisionRank: {
+    byeWeek: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    winPercent: {
-        type: DataTypes.DOUBLE,
-        allowNull: false,
+    headCoach: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    offensiveCoordinator: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    defensiveCoordinator: {
+        type: DataTypes.STRING,
+        allowNull: true,
     },
     primaryColor: {
         type: DataTypes.STRING,
@@ -101,6 +58,54 @@ MLBTeams.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
+    wins: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    losses: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    ties: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    winPercent: {
+        type: DataTypes.DOUBLE,
+        allowNull: false,
+    },
+    divisionWins: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    divisionLosses: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    confWins: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    confLosses: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    divisionTies: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    confTies: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    confRank: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    divisionRank: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     API_ID: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -110,8 +115,8 @@ MLBTeams.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: 'mlbteams',
+    modelName: 'nflteam',
   }
 );
 
-module.exports = MLBTeams;
+module.exports = NFLTeams;

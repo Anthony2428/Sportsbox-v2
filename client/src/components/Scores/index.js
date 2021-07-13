@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import MLBContext from "../../utils/mlbContext";
-import Scorecard from "../Scorecard";
+import ScorecardContainer from "../ScorecardContainer";
 
 function Scores({date}) {
   const [error, setError] = useState(null);
@@ -60,9 +60,7 @@ function Scores({date}) {
       <div className="overflow-x-auto">
         <MLBContext.Provider value={{ allScores }}>
           <div className="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
-              <div className="w-full lg:w-5/6">
-                  <Scorecard />
-              </div>
+              <ScorecardContainer />
           </div>
         </MLBContext.Provider>
       </div>

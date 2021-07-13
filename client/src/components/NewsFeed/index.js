@@ -9,6 +9,7 @@ function Newsfeed() {
         const [allNews, setAllNews] = useState([]);
       
         useEffect(() => {
+          if (window.location.pathname == "/nba") {
           fetch("https://fly.sportsdata.io/v3/nba/scores/json/News?key=9a108b6dad1848478e8b7308446476ea")
             .then(res => res.json())
             .then((result) => {
@@ -32,6 +33,31 @@ function Newsfeed() {
                 setError(error);
               }
             )
+          } else if (window.location.pathname == "/mlb") {
+            fetch("https://fly.sportsdata.io/v3/mlb/scores/json/News?key=027dbf7d0e4742bd9f2e30dd3d8f3f21")
+            .then(res => res.json())
+            .then((result) => {
+                result.map( (each) => {
+                    return {
+                      NewsID: each.NewsID,
+                      Title: each.Title,
+                      OriginalSourceUrl: each.OriginalSourceUrl,
+                      OriginalSourceName: each.OriginalSource,
+                      Team: each.Team,
+                      TimeAgo: each.TimeAgo,
+                      TermsOfUse: each.TermsOfUse,
+                      Content: each.Content,
+                    }
+                })
+                setIsLoaded(true);
+                setAllNews(result);
+              },
+              (error) => {
+                setIsLoaded(true);
+                setError(error);
+              }
+            )
+          }
         }, []);
       
         if (error) {
@@ -45,7 +71,7 @@ function Newsfeed() {
                 <h1 className="text-center">Welcome to SportsBox</h1>
                 <h3 className="text-center">Here's the latest News!</h3>
                 <div>
-                    <CardContainer />
+                  <CardContainer />
                 </div>
               </div>
             </NewsContext.Provider>

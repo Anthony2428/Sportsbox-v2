@@ -41,19 +41,19 @@ const router = require('express').Router();
 //   }
 // });
 
-router.get('/teams/:NBATEAMID', async (req, res) => {
-    try {
-      const NBAteamData = await NBATeams.findByPk(req.params.TEAMID);
-  
-      if (!NBAteamData) {
-        res.status(404).json({ message: 'No NBA Team found with this id!' });
-        return;
-      }
-  
-      res.status(200).json(NBAteamData);
-    } catch (err) {
-      res.status(500).json(err);
+router.get('/team/:teamName', async (req, res) => {
+  try {
+    const NBAteamData = await NBATeams.findOne({where: { teamName: req.params.teamName } });
+    
+    if (!NBAteamData) {
+      res.status(404).json({ message: 'No NBA Team found with this id!' });
+      return;
     }
+
+    res.status(200).json(NBAteamData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/teams', async (req, res) => {
@@ -70,6 +70,7 @@ router.get('/teams', async (req, res) => {
       res.status(500).json(err);
     }
 });
+
 router.delete('/teams/:TEAMID', async (req, res) => {
     try {
       const NBAteamData = await NBATeams.destroy({

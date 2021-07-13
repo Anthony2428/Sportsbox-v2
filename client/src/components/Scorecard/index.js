@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import MLBContext from "../../utils/mlbContext";
+import React, {useContext} from "react";
 import ScoreboardTeam from "../ScoreboardTeam";
 import Gamestats from "../GameStats";
+import MLBContext from "../../utils/mlbContext";
 
 function Scorecard() {
-
+    
     const { allScores } = useContext(MLBContext);
     const allJSX = allScores.map(scores => {
 
@@ -27,6 +27,6 @@ function Scorecard() {
         )
     });
     return allJSX;
-}
+};
 
 export default Scorecard;

@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+h1 {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+body {
+    margin: auto;
+    align-items: center;
+}
+tr {
+    font-weight: bold;
+}
+td {
+    border: none;
+}
+tr {
+    white-space: nowrap;
+}
+hr {
+    margin: 0;
+}
+.side-screen-touch{
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    width: 45%; 
+    background-repeat: no-repeat; 
+    background-size: contain;
+}
+.side-screen-desktop {
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat; 
+    background-size: contain;
+}
