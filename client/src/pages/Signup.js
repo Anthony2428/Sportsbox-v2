@@ -1,6 +1,6 @@
 import React from "react";
 
-const logo = require("../logos/default.png");
+const logo = require("../images/box/transparent.png");
 
 function Signup() {
     return(

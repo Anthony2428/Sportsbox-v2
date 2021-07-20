@@ -1,5 +1,5 @@
 import React from "react";
-const logo = require("../../logos/default.png");
+const logo = require("../../images/box/transparent.png");
 
 function NavBar() {
   // We'll go into the Hooks API later, for now, we are just using some code
