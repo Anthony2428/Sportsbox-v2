@@ -1,29 +1,25 @@
-# Create React Express App
+# SportsBox v2
+> Create React Express App
 
-## About This Boilerplate
+## Boilerplate
 
 This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
 
 The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
+## Application
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+1. Navigate to this directory and install both front and backend dependencies with `npm i`.
+2. After installation is complete, run `npm start`.
+3. In your browser, go to <http://localhost:3000> and the app should now be running.  
 
-```
-npm install
-```
+## Deployment
 
-This should install node modules within the server and the client folder.
+Once changes are committed, deploy to **Heroku** by running `git push heroku main`.
 
-After both installations complete, run the following command in your terminal:
+## Contributors 
 
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+- [Anthony Lopez](https://github.com/Anthony2428)
+- [Charles Lee](https://github.com/Charlee1904)
+- [Imanjit Bains](https://github.com/imanjit)
+- [Ryoma Kobayashi](https://github.com/ryokoba689)
