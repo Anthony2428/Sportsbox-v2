@@ -1,4 +1,5 @@
 import React from "react";
+import logout from "../../utils/logout";
 const logo = require("../../images/box/transparent.png");
 
 function NavBar() {
@@ -27,12 +28,11 @@ function NavBar() {
             </div>
           </div>
    
-        <a className="navbar-item title is-2" style={{color: "royalblue", textAlign: "center"}}>SportsBox Sports</a>
-        {/* <img className="navbar-item img" src={logo} /> */}
+        <img style={{width: "250px"}}src={logo} />
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a id='login' className="button is-danger">Log Out</a>
+              <a onClick={logout} className="button is-danger">Log Out</a>
               <a className="button is-light" href="/login">Log In</a>
             </div>
           </div>

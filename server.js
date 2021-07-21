@@ -21,7 +21,7 @@ const sess = {
 
 };
 app.use(cors());
-app.use(cookieParser()); 
+app.use(cookieParser('secret')); 
 app.use(session(sess));
 
 // Define middleware here

@@ -1,15 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import DataServices from '../../utils/DataServices';
 
-
-
-
-function ScoreboardLogo({ teamName }) {
+function NewsLogo({ sport, teamName }) {
     const [error, setError] = useState(null);
     const [logo, setLogo] = useState({});
 
     useEffect( () => {
-        const data = DataServices.getTeamLogo(teamName).then(result => { 
+        const data = DataServices.getTeamLogo(sport, teamName).then(result => { 
             return result.data 
         })
         .then(logo => {
@@ -21,11 +18,10 @@ function ScoreboardLogo({ teamName }) {
     }, []);
     
     return (
-        <div className="flex justify-center items-center h-32 w-32 mx-auto">
-
-        <img className="object-contain max-h-full" src={logo}/>
-        </div>
+    <div class="column is-4 mb-4">
+        <img class="image is-fullwidth" src={logo} alt=""/>
+      </div>
     )
 };
 
-export default ScoreboardLogo;
+export default NewsLogo;

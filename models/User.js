@@ -17,8 +17,8 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true,
-      },
+        len: [8,16],
+      }
     },
     password: {
       type: DataTypes.STRING,
