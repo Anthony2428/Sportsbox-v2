@@ -19,7 +19,7 @@ router.get('/team/:teamName', async (req, res) => {
 
 router.get('/teams/logo/:teamName', async (req, res) => {
     try {
-      const NHLteamData = await NHLTeams.findOne({where: { teamName: req.params.teamName } });
+      const NHLteamData = await NHLTeams.findOne({where: { abreviatedName: req.params.teamName } });
       
       if (!NHLteamData) {
         res.status(404).json({ message: 'No NHL Team found with this name!' });

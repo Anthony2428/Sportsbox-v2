@@ -58,7 +58,7 @@ router.get('/team/:teamName', async (req, res) => {
 
 router.get('/teams/logo/:teamName', async (req, res) => {
     try {
-      const MLBteamData = await MLBTeams.findOne({where: { teamName: req.params.teamName } });
+      const MLBteamData = await MLBTeams.findOne({where: { abreviatedName: req.params.teamName } });
       
       if (!MLBteamData) {
         res.status(404).json({ message: 'No MLB Team found with this id!' });

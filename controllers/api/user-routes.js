@@ -1,42 +1,35 @@
 const { User } = require('../../models');
 const router = require('express').Router();
 const passport = require('../../config/passport');
-const bcryptjs = require('bcryptjs');
 
 //this creates a new user 
-
-
 router.post('/', async (req,res) => {
     try {
-        User.create({
-            email: req.body.email,
-            password: req.body.password
-          })
-            .then(() => {
-              const statusCode = 307;
-              //once a user is created it saves them and logs them in
+        const dbUserData = await User.create(req.body);
+        //once a user is created it saves them and logs them in
               req.session.save(() => {
                   req.session.loggedIn = true;
-                  
-                  //res.status(200).json(dbUserData);
-                });
-                res.redirect(statusCode, `/api/users/`);
-            })
+                  req.session.user = dbUserData;
+                // res.status(200).json(dbUserData);
+                res.status(200).json({ message:'Welcome to SportsBox Sports'});
+
+            });
     } catch (err) {
+        console.log(err)
         const unauthenticatedStatusCode = 401;
         res.status(unauthenticatedStatusCode).json(err);
     }   
 });
 
 //login 
-router.post('/login', passport.authenticate('local'), async (req,res) =>{
+router.post('/login', passport.authenticate('local'), async (req, res) =>{
     try {
-        console.log("hello");
         req.session.save(() => {
             req.session.loggedIn = true;
-
-            res.status(200).json({ message:'Welcome to sportsbox'});
+            req.session.user = req.user;
+            res.status(200).json({ message:'Welcome to SportsBox Sports'});
         });
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -45,13 +38,23 @@ router.post('/login', passport.authenticate('local'), async (req,res) =>{
 
 //this destroys the session the user was logged in as
 router.post('/logout',(req,res) => {
-    if (req.session.loggedIn) {
-        req.logout();
+    if (req.session.loggedIn === true) {
         req.session.destroy();
     } else {
         res.status(404).end();
     };
     res.status(200).render('homepage');
+});
+
+router.get('/', async (req,res) =>{
+    try {
+        const userData = await User.findAll()
+        
+        res.status(200).json({userData});
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
