@@ -87,6 +87,38 @@ const TeamStats = ({Team, sport}) => {
             </div>
         </div>
         )
-    }
-};
+    
+}
+if (sport === 'NHL') {
+    return (
+        <div className="tile is-vertical is-8">
+        <div className="tile">
+            <Col content1={`${Team.wins} - ${Team.losses} `}
+                subtitle1={`Record`}
+                content2={`${Team.divisionWins} - ${Team.divisionLosses} `}
+                subtitle2={`Rank ${Team.divisionRank} in ${Team.conference} ${Team.division}`}
+                content3={`${Team.divisionWins} `}
+                subtitle3={'Conference Wins'}
+                content4={`Rank ${Team.divisionRank} in ${Team.conference} ${Team.division}`}
+                subtitle4={'Division Rank'}
+            />
+            <Col content1={`${Team.confWins} - ${Team.confLosses} `}
+                subtitle1={`Rank ${Team.divisionRank} in the ${Team.conference}`}
+                content2={`${Math.round((Team.winPercent * 100) * 10) / 10}%`}
+                subtitle2={'Win Percentage'}
+                content3={`${Team.shutoutWins}`}
+                subtitle3={'Team Shut-out wins'}
+                content4={`Season over`}
+                subtitle4={'2021-2022 Bye Week'}
+            />
+        <LogoTile name={`${Team.city} ${Team.teamName}`} logo={Team.logoURL} />
+        </div>
+        <div className="tile is-parent">
+            <TeamNews />
+        </div>
+    </div>
+    )
+}}
+;
+
 export default TeamStats;

@@ -12,7 +12,19 @@ const Thead = ({sport}) => {
                 </tr>
             </thead>
         )
-    } else {
+    } else if (sport === "NHL") {
+        return (
+            <thead>
+                <tr>
+                    <th title="#">#</th>
+                    <th title="name">Name</th>
+                    <th title="Shooting Hand">Shooting Hand</th>
+                    <th title="pos">Pos</th>
+                </tr>
+            </thead>
+        )
+    }
+    else {
         return (
             <thead>
                 <tr>

@@ -57,7 +57,7 @@ const TeamPage = ({match}) => {
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`}}>
                     <div className="tile is-ancestor p-2">
                         <TeamStats Team={Team} sport={sport}/>
-                        <TeamInjuries />
+                       
                         <TeamNews />
                     </div>
                 <MLBPlayerContext.Provider value={roster}>
@@ -72,7 +72,7 @@ const TeamPage = ({match}) => {
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`, padding: "15px"}}>
                     <div className="tile is-ancestor p-2">
                         <TeamStats Team={Team} sport={sport}/>
-                        <TeamInjuries />
+                      
                         <TeamNews />
                     </div>
                 <NBAPlayerContext.Provider value={roster}>
@@ -87,7 +87,7 @@ const TeamPage = ({match}) => {
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`, padding: "15px"}}>
                     <div className="tile is-ancestor p-2">
                         <TeamStats Team={Team} sport={sport}/>
-                        <TeamInjuries />
+                       
                     </div>
                 <NFLPlayerContext.Provider value={roster}>
                     <Roster Roster={roster} sport={sport} />
@@ -101,7 +101,7 @@ const TeamPage = ({match}) => {
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`, padding: "15px"}}>
                     <div className="tile is-ancestor p-2">
                         <TeamStats Team={Team} sport={sport}/>
-                        <TeamInjuries />
+                        
                         <TeamNews />
                     </div>
                 <NHLPlayerContext.Provider value={roster}>

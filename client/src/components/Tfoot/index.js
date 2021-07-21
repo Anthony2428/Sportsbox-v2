@@ -12,7 +12,19 @@ const Tfoot = ({sport}) => {
                 </tr>
             </tfoot>
         )
-    } else {
+    } else if (sport === "NHL") {
+        return (
+            <tfoot>
+                <tr>
+                    <th title="#">#</th>
+                    <th title="name">Name</th>
+                    <th title="Shooting Hand">Shooting Hand</th>
+                    <th title="pos">Pos</th>
+                </tr>
+            </tfoot>
+        )
+    }
+    else {
         return (
             <tfoot>
                 <tr>

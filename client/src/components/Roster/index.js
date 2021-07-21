@@ -31,7 +31,7 @@ const Roster = ({Roster, sport}) => {
     rosterListJsx = Roster.map(player => {
             return (
                 <tr>
-                    <td>{`#${player.Number}`}</td>
+                    <td>{`#${player.Jersey}`}</td>
                     <td>{`${player.FirstName} ${player.LastName}`}</td>
                     <td>{`${player.Shoots}`}</td>
                     <td>{player.Position}</td>
