@@ -14,7 +14,7 @@ router.get('/teams/:teamName', async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
-});
+}); 
 
 router.get('/teams/logo/:teamName', async (req, res) => {
     try {
