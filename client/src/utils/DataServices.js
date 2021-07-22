@@ -190,7 +190,7 @@ const newsHandler = async (sport) => {
   }
 };
 const getAllTeams = async (sport) => {
-  return await http.get(`/${sport}/teams`);
+  return await axios.get(`/${sport}/teams`);
 };
 const getOneTeam = async (teamName, sport) => {
   return await axios.get(`${sport}/team/${teamName}`);
