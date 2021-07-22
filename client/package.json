@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Mern Stack",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "https://shrouded-hollows-93454.herokuapp.com/",
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
