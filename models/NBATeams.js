@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
 class NBATeams extends Model {}
-
 NBATeams.init(
   {
     TEAMID: {
@@ -127,9 +124,4 @@ NBATeams.init(
     modelName: 'nbateam',
   }
 );
-
 module.exports = NBATeams;
-=======
-const{Model,DataTypes}=require('sequelize');const sequelize=require('../config/connection');class NBATeams extends Model{}
-NBATeams.init({TEAMID:{type:DataTypes.INTEGER,allowNull:!1,primaryKey:!0,},abreviatedName:{type:DataTypes.STRING,allowNull:!1,},city:{type:DataTypes.STRING,allowNull:!1,},teamName:{type:DataTypes.STRING,allowNull:!1,},wins:{type:DataTypes.INTEGER,allowNull:!1,},losses:{type:DataTypes.INTEGER,allowNull:!1,},homeWins:{type:DataTypes.INTEGER,allowNull:!1,},awayWins:{type:DataTypes.INTEGER,allowNull:!1,},homeLosses:{type:DataTypes.INTEGER,allowNull:!1,},awayLosses:{type:DataTypes.INTEGER,allowNull:!1,},confWins:{type:DataTypes.INTEGER,allowNull:!1,},confLosses:{type:DataTypes.INTEGER,allowNull:!1,},divisionWins:{type:DataTypes.INTEGER,allowNull:!1,},divisionLosses:{type:DataTypes.INTEGER,allowNull:!1,},lastTenWins:{type:DataTypes.INTEGER,allowNull:!1,},lastTenLosses:{type:DataTypes.INTEGER,allowNull:!1,},gamesBack:{type:DataTypes.DOUBLE,allowNull:!1,},streak:{type:DataTypes.STRING,allowNull:!0,},conference:{type:DataTypes.STRING,allowNull:!1,},confRank:{type:DataTypes.INTEGER,allowNull:!1,},division:{type:DataTypes.STRING,allowNull:!1,},divisionRank:{type:DataTypes.INTEGER,allowNull:!1,},winPercent:{type:DataTypes.DOUBLE,allowNull:!1,},pointPerGame:{type:DataTypes.DOUBLE,allowNull:!1,},pointsAllowedPerGame:{type:DataTypes.DOUBLE,allowNull:!1,},primaryColor:{type:DataTypes.STRING,allowNull:!0,},secondaryColor:{type:DataTypes.STRING,allowNull:!0,},logoURL:{type:DataTypes.STRING,allowNull:!0,},API_ID:{type:DataTypes.STRING,allowNull:!0,}},{sequelize,timestamps:!1,freezeTableName:!0,modelName:'nbateam',});module.exports=NBATeams
->>>>>>> 09eceb2ec7c4877329cdcd3aaa9b0efe833ab6d9

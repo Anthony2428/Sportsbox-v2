@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 
 const LogoTile = ({name, logo, secondColor}) => {
@@ -12,6 +11,3 @@ const LogoTile = ({name, logo, secondColor}) => {
     )
 };
 export default LogoTile;
-=======
-import React from "react";const LogoTile=({name,logo,content,subtitle})=>{return(<div className="tile is-parent flex-col mt-4" style={{textAlign:'center',width:'150%'}}><article className="tile is-child"><p className="title has-text-white">{name}</p><figure className="image is-4by3"><img src={logo}/></figure></article><article className="tile is-child" style={{textAlign:"center"}}><p className="title has-text-white">{content}</p><p className="subtitle has-text-grey">{subtitle}</p></article></div>)};export default LogoTile
->>>>>>> 09eceb2ec7c4877329cdcd3aaa9b0efe833ab6d9

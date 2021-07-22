@@ -18,8 +18,8 @@ function NewsLogo({ sport, teamName }) {
     }, [sport, teamName]);
     
     return (
-    <div class="column is-4 mb-4">
-        <img class="image is-fullwidth" src={logo} alt="Team Logo"/>
+    <div className="column is-4 mb-4">
+        <img className="image is-fullwidth" src={logo} alt="Team Logo"/>
       </div>
     )
 };
