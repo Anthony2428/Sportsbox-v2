@@ -106,10 +106,6 @@ NFLTeams.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    API_ID: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    }
   },
   {
     sequelize,

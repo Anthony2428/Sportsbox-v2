@@ -10,8 +10,6 @@ import NHLPlayerContext from "../utils/NHLPlayerContext";
 import NHLTeamsContext from "../utils/NHLTeamsContext";
 import Roster from "../components/Roster";
 import TeamStats from "../components/TeamStats";
-import TeamInjuries from "../components/TeamInjuries";
-import TeamNews from "../components/TeamNews";
 
 const handler = async (teamName, sport) => {
     const teamData = await DataServices.getOneTeam(teamName, sport).then(result => { 
@@ -45,20 +43,18 @@ const TeamPage = ({match}) => {
                 setIsLoaded(true);
     };
     fetchMyData();
-        }, [match]);
+        }, [match, sport, teamName]);
 
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
         return <div>Loading...</div>;
-    } else if (sport === 'MLB') {
+    } else if (sport === "mlb") {
         return (
             <MLBTeamsContext.Provider value={Team}>
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`}}>
-                    <div className="tile is-ancestor p-2">
+                    <div className="tile is-ancestor p-5">
                         <TeamStats Team={Team} sport={sport}/>
-                       
-                        <TeamNews />
                     </div>
                 <MLBPlayerContext.Provider value={roster}>
                     <Roster Roster={roster} sport={sport} />
@@ -66,14 +62,12 @@ const TeamPage = ({match}) => {
                 </div>
             </MLBTeamsContext.Provider>
         )
-    } else if (sport === 'NBA') {
+    } else if (sport === "nba") {
         return (
             <NBATeamsContext.Provider value={Team}>
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`, padding: "15px"}}>
-                    <div className="tile is-ancestor p-2">
+                    <div className="tile is-ancestor p-5">
                         <TeamStats Team={Team} sport={sport}/>
-                      
-                        <TeamNews />
                     </div>
                 <NBAPlayerContext.Provider value={roster}>
                     <Roster Roster={roster} sport={sport} />
@@ -81,13 +75,12 @@ const TeamPage = ({match}) => {
                 </div>
             </NBATeamsContext.Provider>
         )
-    } else if (sport === 'NFL') {
+    } else if (sport === "nfl") {
         return (
             <NFLTeamsContext.Provider value={Team}>
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`, padding: "15px"}}>
-                    <div className="tile is-ancestor p-2">
+                    <div className="tile is-ancestor p-5">
                         <TeamStats Team={Team} sport={sport}/>
-                       
                     </div>
                 <NFLPlayerContext.Provider value={roster}>
                     <Roster Roster={roster} sport={sport} />
@@ -95,14 +88,12 @@ const TeamPage = ({match}) => {
                 </div>
             </NFLTeamsContext.Provider>
         )
-    } else if (sport === 'NHL') {
+    } else if (sport === "nhl") {
         return (
             <NHLTeamsContext.Provider value={Team}>
                 <div style={{backgroundImage: `linear-gradient(180deg, #${Team.primaryColor}, #${Team.secondaryColor})`, padding: "15px"}}>
-                    <div className="tile is-ancestor p-2">
+                    <div className="tile is-ancestor p-5">
                         <TeamStats Team={Team} sport={sport}/>
-                        
-                        <TeamNews />
                     </div>
                 <NHLPlayerContext.Provider value={roster}>
                     <Roster Roster={roster} sport={sport} />

@@ -1,19 +1,13 @@
 import React from "react";
 
-const LogoTile = ({name, logo, content, subtitle}) => {
+const LogoTile = ({name, logo, secondColor}) => {
     return (
-        <div className="tile is-parent flex-col mt-4" style={{textAlign: 'center', width: '150%'}}>
-            <article className="tile is-child">
-            <p className="title has-text-white">{name}</p>
-            <figure className="image is-4by3">
+        <article className="tile is-parent is-vertical p-5" style={{alignItems: "center", textAlign: "center", margin: "auto"}}>
+            <p className="title" style={{color: secondColor}}>{name}</p>
+            <figure className="p-5 image is-fullwidth">
                 <img src={logo}/>
             </figure>
-            </article>
-            <article className="tile is-child" style={{textAlign: "center"}}>
-                <p className="title has-text-white">{content}</p>
-                <p className="subtitle has-text-grey">{subtitle}</p>        
-            </article>
-        </div>
+        </article>
     )
 };
 export default LogoTile;

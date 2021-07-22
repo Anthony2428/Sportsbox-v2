@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Newsfeed from "../components/NewsFeed";
 
 function Sport({match}) {
 
 		return(
-			<section class="section">
-				<div class="container">
-					<div class="mb-6 columns is-multiline is-centered">
-						<div class="column is-8 has-text-centered">
+			<section className="section">
+				<div className="container">
+					<div className="mb-6 columns is-multiline is-centered">
+						<div className="column is-8 has-text-centered">
 							<h1 className="text-center">Welcome to SportsBox</h1>
 							<h3 className="text-center">Here's the latest News!</h3>
 						</div>

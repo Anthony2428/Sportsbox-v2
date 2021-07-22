@@ -1,5 +1,5 @@
 import React from "react";
-import logout from "../../utils/logout";
+//import logout from "../../utils/logout";
 const logo = require("../../images/box/transparent.png");
 
 function NavBar() {
@@ -8,37 +8,58 @@ function NavBar() {
   // This allows the component to check the route any time the user uses a link to navigate.
 
   return (
-    <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <a role="a" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-            <div className="buttons">
-              <a href="/" className="navbar-item button is-light">Home</a>
-              <a href="/MLB/teams" className="navbar-item button is-light">MLB</a>
-              <a href="/NBA/teams" className="navbar-item button is-light">NBA</a>
-              <a href="/NFL/teams" className="navbar-item button is-light">NFL</a>
-              <a href="/NHL/teams" className="navbar-item button is-light">NHL</a>
+    <nav className="navbar py-4" style={{backgroundColor: "inherit"}}>
+      <div className="container is-fluid">
+        <div className="navbar-brand">
+          <a className="navbar-item h-8" href="/">
+            <img src={logo} alt="SportsBox Sports" />
+          </a>
+          <a className="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div className="navbar-menu" id="target">
+          <div className="navbar-start">
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">MLB</a>
+              <div className="navbar-dropdown is-boxed">
+                <a className="navbar-item" href="/mlb">News</a>
+                <a className="navbar-item" href="/mlb/teams">Teams</a>
+              </div>
+            </div>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">NBA</a>
+              <div className="navbar-dropdown is-boxed">
+                <a className="navbar-item" href="/nba">News</a>
+                <a className="navbar-item" href="/nba/teams">Teams</a>
+              </div>
+            </div>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">NFL</a>
+              <div className="navbar-dropdown is-boxed">
+                <a className="navbar-item" href="/nfl">News</a>
+                <a className="navbar-item" href="/nfl/teams">Teams</a>
+              </div>
+            </div>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">NHL</a>
+              <div className="navbar-dropdown is-boxed">
+                <a className="navbar-item" href="/nhl">News</a>
+                <a className="navbar-item" href="/nhl/teams">Teams</a>
+              </div>
             </div>
           </div>
-   
-        <img style={{width: "250px"}}src={logo} />
-        <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a onClick={logout} className="button is-danger">Log Out</a>
-              <a className="button is-light" href="/login">Log In</a>
-            </div>
+              <a className="button" href="/login">Sign In</a>
+              <a className="button is-primary" href="/signup">Sign Up</a></div>
           </div>
         </div>
       </div>
     </nav>
+
   );
 }
 

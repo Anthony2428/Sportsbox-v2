@@ -101,10 +101,6 @@ MLBTeams.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-    API_ID: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    }
   },
   {
     sequelize,

@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 
-const logo = require("../images/box/transparent.png");
-
 function Signup() {
 	const [username, setUsername] = useState("");
   	const [password, setPassword] = useState("");
@@ -27,7 +25,7 @@ function Signup() {
 		}
 	};
     return(
-		<section className="section is-relative">
+		<section style={{height: "100%"}}className="section is-relative">
 		<div className="container">
 		  <div className="columns is-multiline">
 			<div className="column is-6 is-4-desktop mb-5 mr-auto">
@@ -57,8 +55,8 @@ function Signup() {
 			</div>
 		  </div>
 		</div>
-		<div className="is-hidden-mobile is-hidden-desktop side-screen-touch" style={{backgroundImage: "url('../logos/default.png')"}}></div>
-		<div className="is-hidden-touch side-screen-desktop" style={{backgroundImage: `url(${logo})`}}></div>
+		<div className="is-hidden-mobile is-hidden-desktop side-screen"></div>
+		<div className="is-hidden-touch side-screen-touch"></div>
 	  </section>
 )};
 

@@ -56,19 +56,19 @@ const getNHLRoster = async (teamName) => {
 const rosterHandler = async (teamName, sport) => {
   console.log(sport, teamName)
   switch (sport) {
-    case "MLB": {
+    case "mlb": {
       const roster = await getMLBRoster(teamName);
       return roster;
     }
-    case "NBA": {
+    case "nba": {
       const roster = await getNBARoster(teamName);
       return roster;
     }
-    case "NHL": {
+    case "nhl": {
       const roster = await getNHLRoster(teamName);
       return roster;
     }
-    case "NFL": {
+    case "nfl": {
       const roster = await getNFLRoster(teamName);
       return roster;
     }

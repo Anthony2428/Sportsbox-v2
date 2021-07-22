@@ -1,13 +1,12 @@
 import React from "react";
 import Col from "../Col";
 import LogoTile from "../LogoTile";
-import TeamNews from "../TeamNews";
 
 const TeamStats = ({Team, sport}) => {
-    if (sport === 'MLB') {
+    if (sport === "mlb") {
     return (
-        <div className="tile is-vertical is-8">
-            <div className="tile">
+        <div className="tile is-vertical">
+            <div className="tile is-ancestor">
                 <Col content1={`${Team.wins} - ${Team.losses}`}
                     subtitle1={`Record`}
                     content2={`${Team.divisionWins} - ${Team.divisionLosses}`}
@@ -26,15 +25,14 @@ const TeamStats = ({Team, sport}) => {
                     content4={`Rank ${Team.wildCardRank}`}
                     subtitle4={'Wild Card'}
                 />
-            <LogoTile name={`${Team.city} ${Team.teamName}`}logo={Team.logoURL} />
+            <LogoTile secondColor={`#${Team.secondaryColor}`} name={`${Team.city} ${Team.teamName}`}logo={Team.logoURL} />
             </div>
-            
         </div>
     )}
-    if (sport === 'NBA') {
+    if (sport === "nba") {
         return (
-            <div className="tile is-vertical is-8">
-            <div className="tile">
+            <div className="tile is-vertical">
+            <div className="tile is-ancestor">
                 <Col content1={`${Team.wins} - ${Team.losses}`}
                     subtitle1={`Record`}
                     content2={`${Team.divisionWins} - ${Team.divisionLosses}`}
@@ -53,15 +51,15 @@ const TeamStats = ({Team, sport}) => {
                     content4={Team.pointsAllowedPerGame}
                     subtitle4={'Allowed Points Per Game'}
                 />
-            <LogoTile name={`${Team.city} ${Team.teamName}`}logo={Team.logoURL} />
+            <LogoTile secondColor={`#${Team.secondaryColor}`} name={`${Team.city} ${Team.teamName}`}logo={Team.logoURL} />
             </div>
         </div>
         )
     }
-    if (sport === 'NFL') {
+    if (sport === "nfl") {
         return (
-            <div className="tile is-vertical is-8">
-            <div className="tile">
+            <div className="tile is-vertical">
+            <div className="tile is-ancestor">
                 <Col content1={`${Team.wins} - ${Team.losses} - ${Team.ties}`}
                     subtitle1={`Record`}
                     content2={`${Team.divisionWins} - ${Team.divisionLosses} - ${Team.divisionTies}`}
@@ -80,19 +78,16 @@ const TeamStats = ({Team, sport}) => {
                     content4={`Week ${Team.byeWeek}`}
                     subtitle4={'2021-2022 Bye Week'}
                 />
-            <LogoTile name={`${Team.city} ${Team.teamName}`} logo={Team.logoURL} content={`${Team.headCoach}`} subtitle={'Head Coach'}/>
-            </div>
-            <div className="tile is-parent">
-                <TeamNews />
+            <LogoTile secondColor={`#${Team.secondaryColor}`}name={`${Team.city} ${Team.teamName}`} logo={Team.logoURL} />
             </div>
         </div>
         )
     
 }
-if (sport === 'NHL') {
+if (sport === "nhl") {
     return (
-        <div className="tile is-vertical is-8">
-        <div className="tile">
+        <div className="tile is-vertical">
+        <div className="tile is-ancestor">
             <Col content1={`${Team.wins} - ${Team.losses} `}
                 subtitle1={`Record`}
                 content2={`${Team.divisionWins} - ${Team.divisionLosses} `}
@@ -111,10 +106,7 @@ if (sport === 'NHL') {
                 content4={`Season over`}
                 subtitle4={'2021-2022 Bye Week'}
             />
-        <LogoTile name={`${Team.city} ${Team.teamName}`} logo={Team.logoURL} />
-        </div>
-        <div className="tile is-parent">
-            <TeamNews />
+        <LogoTile secondColor={`#${Team.secondaryColor}`} name={`${Team.city} ${Team.teamName}`} logo={Team.logoURL} />
         </div>
     </div>
     )

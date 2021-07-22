@@ -15,11 +15,11 @@ function NewsLogo({ sport, teamName }) {
         (error) => {
             setError(error);
         })
-    }, []);
+    }, [sport, teamName]);
     
     return (
     <div class="column is-4 mb-4">
-        <img class="image is-fullwidth" src={logo} alt=""/>
+        <img class="image is-fullwidth" src={logo} alt="Team Logo"/>
       </div>
     )
 };

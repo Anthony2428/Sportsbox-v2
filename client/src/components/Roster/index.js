@@ -6,7 +6,7 @@ import Tfoot from "../Tfoot";
 const Roster = ({Roster, sport}) => {
     console.log(Roster)
     let rosterListJsx;
-    if (sport === "MLB") {
+    if (sport === "mlb") {
     rosterListJsx = Roster.map(player => {
         return (
             <tr>
@@ -17,7 +17,7 @@ const Roster = ({Roster, sport}) => {
             </tr>
             )
         })
-    } else if (sport === "NFL") {
+    } else if (sport === "nfl") {
     rosterListJsx = Roster.map(player => {
             return (
                 <tr>
@@ -27,7 +27,7 @@ const Roster = ({Roster, sport}) => {
                 </tr>
                 )
         })
-    } else if (sport === "NHL") {
+    } else if (sport === "nhl") {
     rosterListJsx = Roster.map(player => {
             return (
                 <tr>

@@ -30,25 +30,25 @@ function Teams({match}) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
         return <div>Loading...</div>;
-    } else if (sport === "NBA") {
+    } else if (sport === "nba") {
         return (
             <NBATeamsContext.Provider value={{allTeams}}>
                 <TeamCard team={allTeams} sport={sport}/>
             </NBATeamsContext.Provider>
         )
-    } else if (sport === "NFL") {
+    } else if (sport === "nfl") {
         return (
             <NFLTeamsContext.Provider value={{allTeams}}>
                 <TeamCard team={allTeams} sport={sport}/>
             </NFLTeamsContext.Provider>
         )
-    } else if (sport === "NHL") {
+    } else if (sport === "nhl") {
         return (
             <NHLTeamsContext.Provider value={{allTeams}}>
                 <TeamCard team={allTeams} sport={sport}/>
             </NHLTeamsContext.Provider>
         )
-    } else if (sport === "MLB") {
+    } else if (sport === "mlb") {
     return (
         <MLBTeamsContext.Provider value={{allTeams}}>
             <TeamCard team={allTeams} sport={sport}/>
