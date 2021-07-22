@@ -1,11 +1,4 @@
-import axios from "axios";
-
-// export default axios.create({
-//   baseURL: "https://shrouded-hollows-93454.herokuapp.com/api",
-//   headers: {
-//     "Content-type": "application/json"
-//   }
-// });
+import http from "./http-common";
 
 const getMLBRoster = async (teamName) => {
   const data = await fetch(`https://fly.sportsdata.io/v3/mlb/scores/json/Players/${teamName}?key=027dbf7d0e4742bd9f2e30dd3d8f3f21`)
@@ -190,13 +183,13 @@ const newsHandler = async (sport) => {
   }
 };
 const getAllTeams = async (sport) => {
-  return await axios.get(`/${sport}/teams`);
+  return await http.get(`/${sport}/teams`);
 };
 const getOneTeam = async (teamName, sport) => {
-  return await axios.get(`${sport}/team/${teamName}`);
+  return await http.get(`${sport}/team/${teamName}`);
 };
 const getTeamLogo = async (sport, teamName) => {
-  return await axios.get(`${sport}/teams/logo/${teamName}`);
+  return await http.get(`${sport}/teams/logo/${teamName}`);
 };
 
 
