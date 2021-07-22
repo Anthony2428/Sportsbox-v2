@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const getMLBRoster = async (teamName) => {
   const data = await fetch(`https://fly.sportsdata.io/v3/mlb/scores/json/Players/${teamName}?key=027dbf7d0e4742bd9f2e30dd3d8f3f21`)
         .then(res => res.json())
@@ -53,7 +54,6 @@ const getNHLRoster = async (teamName) => {
   return data;
 }
 const rosterHandler = async (teamName, sport) => {
-  console.log(sport, teamName)
   switch (sport) {
     case "mlb": {
       const roster = await getMLBRoster(teamName);
@@ -182,13 +182,14 @@ const newsHandler = async (sport) => {
   }
 };
 const getAllTeams = async (sport) => {
-  return await axios.get(`/${sport}/teams`);
+  const data = await axios.get(`/api/${sport}/teams`);
+  return data
 };
 const getOneTeam = async (teamName, sport) => {
-  return await axios.get(`${sport}/team/${teamName}`);
+  return await axios.get(`/api/${sport}/teams/${teamName}`);
 };
 const getTeamLogo = async (sport, teamName) => {
-  return await axios.get(`${sport}/teams/logo/${teamName}`);
+  return await axios.get(`api/${sport}/teams/logo/${teamName}`);
 };
 
 

@@ -2,7 +2,7 @@ import React from "react";
 import Newsfeed from "../components/NewsFeed";
 
 function Sport({match}) {
-
+	console.log(match)
 		return(
 			<section className="section">
 				<div className="container">

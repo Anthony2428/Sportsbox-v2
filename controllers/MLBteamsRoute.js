@@ -1,7 +1,7 @@
 const { MLBTeams } = require('../models');
 const router = require('express').Router();
 
-router.get('/team/:teamName', async (req, res) => {
+router.get('/teams/:teamName', async (req, res) => {
     try {
       const MLBteamData = await MLBTeams.findOne({where: { teamName: req.params.teamName } });
       

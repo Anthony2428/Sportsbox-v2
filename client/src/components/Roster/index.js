@@ -1,15 +1,13 @@
 import React from "react";
-// import RosterList from "../RosterList";
 import Thead from "../Thead";
 import Tfoot from "../Tfoot";
 
 const Roster = ({Roster, sport}) => {
-    console.log(Roster)
     let rosterListJsx;
     if (sport === "mlb") {
     rosterListJsx = Roster.map(player => {
         return (
-            <tr>
+            <tr key={player.PlayerID}>
                 <td>{`#${player.Jersey}`}</td>
                 <td>{`${player.FirstName} ${player.LastName}`}</td>
                 <td>{`${player.BatHand}/${player.ThrowHand}`}</td>
@@ -20,7 +18,7 @@ const Roster = ({Roster, sport}) => {
     } else if (sport === "nfl") {
     rosterListJsx = Roster.map(player => {
             return (
-                <tr>
+                <tr key={player.PlayerID}>
                     <td>{`#${player.Number}`}</td>
                     <td>{`${player.FirstName} ${player.LastName}`}</td>
                     <td>{player.Position}</td>
@@ -30,7 +28,7 @@ const Roster = ({Roster, sport}) => {
     } else if (sport === "nhl") {
     rosterListJsx = Roster.map(player => {
             return (
-                <tr>
+                <tr key={player.PlayerID}>
                     <td>{`#${player.Jersey}`}</td>
                     <td>{`${player.FirstName} ${player.LastName}`}</td>
                     <td>{`${player.Shoots}`}</td>
@@ -41,7 +39,7 @@ const Roster = ({Roster, sport}) => {
     } else {
     rosterListJsx = Roster.map(player => {
             return (
-                <tr>
+                <tr key={player.PlayerID}>
                     <td>{`#${player.Jersey}`}</td>
                     <td>{`${player.FirstName} ${player.LastName}`}</td>
                     <td>{player.Position}</td>

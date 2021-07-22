@@ -2,7 +2,7 @@ const { NHLTeams } = require('../models');
 const router = require('express').Router();
 //const isAuthenticated = require('../config/middleware/isAuthenticated');
 
-router.get('/team/:teamName', async (req, res) => {
+router.get('/teams/:teamName', async (req, res) => {
     try {
       const NHLteamData = await NHLTeams.findOne({where: { teamName: req.params.teamName } });
       
