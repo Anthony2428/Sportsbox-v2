@@ -1,7 +1,6 @@
 # SportsBox
 
 This setup allows is a Node/Express/React app which is deployed to Heroku.
-as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
 ## Application
 
