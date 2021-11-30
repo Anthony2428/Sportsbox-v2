@@ -9,6 +9,6 @@ as it's updated via webpack dev server, and the backend Express app will auto-re
 2. API calls for news.
 3. React components styled dynamically by the team colors.  
 
-https://www.sportsbox-sports.herokuapp.com
+http://sportsbox-sports.herokuapp.com/
 
 - [Anthony Lopez](https://github.com/Anthony2428)
